@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="RIDER_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$/../.." />
+    <content url="file://$MODULE_DIR$/../..">
+      <excludeFolder url="file://$MODULE_DIR$/../.idea.Assembly-CSharp.dir/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Assets/.idea/.idea.Assets.dir/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Library/PackageCache/com.unity.ide.rider@1.1.4/Rider/Editor/.idea" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
