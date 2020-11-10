@@ -58,8 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraFollow.cs" />
-     <Compile Include="Assets\PlayerControls.cs" />
+     <Compile Include="Assets\Game\CameraFollow.cs" />
+     <Compile Include="Assets\Game\PlayerControls.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UnityProjects/Mamong Us/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
