@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class PlayerControls : MonoBehaviour
 {
-    [FormerlySerializedAs("SPEED")] public float speed = 10f;
+    public float speed = 10f;
     private Transform _transform;
     
     // Start is called before the first frame update
@@ -19,5 +19,10 @@ public class PlayerControls : MonoBehaviour
     {
         _transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 
             Input.GetAxis("Vertical") * Time.deltaTime * speed, 0);
+    }
+
+    public Vector3 GetPosition()
+    {
+        return _transform.position;
     }
 }

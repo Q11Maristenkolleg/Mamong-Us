@@ -1,3 +1,9 @@
 ﻿.idea
 
 .iml
+
+/Builds/
+/Library/
+/Logs/
+/obj/
+/Temp/
