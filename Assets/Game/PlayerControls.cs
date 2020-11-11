@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -6,23 +7,32 @@ using UnityEngine.Serialization;
 public class PlayerControls : MonoBehaviour
 {
     public float speed = 10f;
-    private Transform _transform;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        _transform = GetComponent<Transform>();
-    }
 
-    // Update is called once per frame
+    public Transform transform;
+    public Rigidbody2D rigidbody;
+    public Animator animator;
+    
+    private Vector2 _move;
+    private bool _left;
+
     void Update()
     {
-        _transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * speed, 
-            Input.GetAxis("Vertical") * Time.deltaTime * speed, 0);
+        _move.x = Input.GetAxis("Horizontal");
+        _move.y = Input.GetAxis("Vertical");
+        animator.SetFloat("speed", _move.sqrMagnitude);
+        if (_move.x == 0)
+        {
+            return;
+        }
+        if (_left ^ _move.x < 0)
+        {
+            _left = !_left;
+            transform.localScale = new Vector3(_move.x < 0 ? -1 : 1, 1, 1);
+        }
     }
 
-    public Vector3 GetPosition()
+    void FixedUpdate()
     {
-        return _transform.position;
+        rigidbody.MovePosition(rigidbody.position + _move * (Time.fixedDeltaTime * speed));
     }
 }
