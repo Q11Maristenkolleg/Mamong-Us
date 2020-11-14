@@ -2,9 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.Serialization;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls : /*MonoBehaviour*/NetworkBehaviour
 {
     public float speed = 10f;
 
@@ -17,6 +18,10 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
+        if (!this.isLocalPlayer)
+        {
+            return;
+        }
         _move.x = Input.GetAxis("Horizontal");
         _move.y = Input.GetAxis("Vertical");
         var mm = _move.sqrMagnitude;
