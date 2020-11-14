@@ -58,8 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Game\CameraFollow.cs" />
      <Compile Include="Assets\Game\Pause\PauseScript.cs" />
+     <Compile Include="Assets\Game\Player\CameraFollow.cs" />
      <Compile Include="Assets\Game\Player\PlayerControls.cs" />
      <Compile Include="Assets\Main Menu\Main_Menu.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -196,6 +196,15 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/UnityProjects/Mamong Us/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.multiplayer-hlapi.Editor">
+ <HintPath>D:/UnityProjects/Mamong Us/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.multiplayer-weaver.Editor">
+ <HintPath>D:/UnityProjects/Mamong Us/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.multiplayer-hlapi.Runtime">
+ <HintPath>D:/UnityProjects/Mamong Us/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
