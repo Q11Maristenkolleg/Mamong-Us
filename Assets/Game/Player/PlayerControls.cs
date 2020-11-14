@@ -19,7 +19,12 @@ public class PlayerControls : MonoBehaviour
     {
         _move.x = Input.GetAxis("Horizontal");
         _move.y = Input.GetAxis("Vertical");
-        animator.SetFloat("speed", _move.sqrMagnitude);
+        var mm = _move.sqrMagnitude;
+        if (mm > 1)
+        {
+            _move.Normalize();
+        }
+        animator.SetFloat("speed", mm);
         if (_move.x == 0)
         {
             return;
