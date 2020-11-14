@@ -8,8 +8,8 @@ public class PlayerControls : MonoBehaviour
 {
     public float speed = 10f;
 
-    public Transform transform;
-    public Rigidbody2D rigidbody;
+    public new Transform transform;
+    public new Rigidbody2D rigidbody;
     public Animator animator;
     
     private Vector2 _move;

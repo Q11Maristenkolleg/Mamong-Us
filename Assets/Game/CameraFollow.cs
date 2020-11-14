@@ -11,6 +11,6 @@ public class CameraFollow : MonoBehaviour
     {
         var distance = playerPosition.position - cameraPosition.position;
         distance.z = 0;
-        cameraPosition.Translate(distance * (Time.fixedDeltaTime * 4));
+        cameraPosition.Translate(distance * (Time.fixedDeltaTime * 10));
     }
 }
