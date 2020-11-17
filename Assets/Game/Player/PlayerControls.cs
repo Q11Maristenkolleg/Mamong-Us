@@ -25,11 +25,15 @@ public class PlayerControls : /*MonoBehaviour*/NetworkBehaviour
         _move.x = Input.GetAxis("Horizontal");
         _move.y = Input.GetAxis("Vertical");
         var mm = _move.sqrMagnitude;
+        animator.SetFloat("speed", mm);
+        if (mm < 0.1)
+        {
+            return;
+        }
         if (mm > 1)
         {
             _move.Normalize();
         }
-        animator.SetFloat("speed", mm);
         if (_move.x == 0)
         {
             return;
