@@ -8,6 +8,8 @@ using UnityEngine.Serialization;
 public class PlayerControls : /*MonoBehaviour*/NetworkBehaviour
 {
     public float speed = 10f;
+    
+    private readonly Vector3 Y_AXIS = new Vector3(0, 1, 0);
 
     public new Transform transform;
     public new Rigidbody2D rigidbody;
@@ -41,7 +43,8 @@ public class PlayerControls : /*MonoBehaviour*/NetworkBehaviour
         if (_left ^ _move.x < 0)
         {
             _left = !_left;
-            transform.localScale = new Vector3(_move.x < 0 ? -1 : 1, 1, 1);
+            transform.Rotate(Y_AXIS, 180);
+            //transform.localScale = new Vector3(_move.x < 0 ? -1 : 1, 1, 1);
         }
     }
 
